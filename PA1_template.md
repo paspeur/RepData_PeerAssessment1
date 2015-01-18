@@ -1,8 +1,8 @@
 ---
 title: "Reproducible Research: Peer Assessment 1"
 output:
-	html_document:
-		keep_md: true
+  html_document:
+    keep_md: true
 ---
 # Reproducible Research: Peer Assessment 1
 
@@ -228,19 +228,20 @@ qplot(x = interval, y = steps, data = steps.interval.data) +
 
 ```r
 steps.interval.summary <- data %>%
-	summarize(max = max(steps))
+	summarize(max_steps = max(steps),
+		max_steps_interval = interval[which.max(steps)])
 
 steps.interval.summary
 ```
 
 ```
-##   max
-## 1 806
+##   max_steps max_steps_interval
+## 1       806                615
 ```
 
-| Variable | Value |
-|:---|---:|
-| 5-minute interval, which on average across all the days in the dataset, contains the maximum number of steps | **806** |
+| Variable | Interval | Steps |
+|:---|---:|---:|
+| 5-minute interval, which on average across all the days in the dataset, contains the maximum number of steps | **615** | **806** |
 
 ## Imputing missing values
 
